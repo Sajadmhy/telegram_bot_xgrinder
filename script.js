@@ -30,6 +30,11 @@ function handleRequest(req, res) {
 
     req.on('end', () => {
       body = JSON.parse(body);
+      if (body.type !== 'tweet_create_events') {
+        res.writeHead(200, { 'Content-Type': 'text/plain' });
+        res.end('Not a tweet event');
+        return;
+      }
       sendTweetToTelegram(body.url, body.topicId);
       res.writeHead(200, { 'Content-Type': 'text/plain' });
       res.end('Valid request');
