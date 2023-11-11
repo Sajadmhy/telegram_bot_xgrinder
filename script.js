@@ -35,7 +35,9 @@ function handleRequest(req, res) {
         res.end('Not a tweet event');
         return;
       }
-      sendTweetToTelegram(body.url, body.topicId);
+      const newUrl = body.url.replace("twitter.com","fxtwitter.com");
+      
+      sendTweetToTelegram(newUrl, body.topicId);
       res.writeHead(200, { 'Content-Type': 'text/plain' });
       res.end('Valid request');
     }
