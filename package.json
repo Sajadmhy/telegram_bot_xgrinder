@@ -1,4 +1,12 @@
-{
+{ "scripts": {
+    "start": "node script.js"
+  },
+  "name": "telegram-bot",
+  "version": "1.0.0",
+  "description": "Telegram bot",
+  "main": "script.js",
+  "author": "Sergey",
+  "license": "ISC",
   "dependencies": {
     "dotenv": "^16.3.1",
     "node-telegram-bot-api": "^0.64.0"
