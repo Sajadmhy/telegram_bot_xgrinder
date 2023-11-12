@@ -1,14 +1,21 @@
-{ "scripts": {
-    "start": "node script.js"
-  },
+{
   "name": "telegram-bot",
   "version": "1.0.0",
   "description": "Telegram bot",
   "main": "script.js",
   "author": "Sergey",
   "license": "ISC",
+  "scripts": {
+    "start": "node script.js",
+    "build": "babel script.js -d build"
+  },
   "dependencies": {
+    "body-parser": "^1.20.2",
     "dotenv": "^16.3.1",
-    "node-telegram-bot-api": "^0.64.0"
+    "express": "^4.18.2",
+    "telegraf": "^4.15.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.6.5"
   }
 }
